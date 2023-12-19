@@ -5,7 +5,7 @@ import Stats from './components/Stats'
 
 export default function App() {
     return (
-        <div className="App">
+        <div className="app">
             <Logo />
             <Form />
             <PackingList />
