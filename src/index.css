@@ -1,0 +1,156 @@
+/* 
+const initialItems = [
+  { id: 1, description: "Passports", quantity: 2, packed: false },
+  { id: 2, description: "Socks", quantity: 12, packed: false },
+];
+*/
+/* Импорт шрифтов Monoton и Quicksand из Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Quicksand:wght@500;700&display=swap');
+
+/* Сброс стилей для всех элементов, установка box-sizing в border-box */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Установка базового размера шрифта в 62.5% для удобства вычислений в rem */
+html {
+    font-size: 62.5%;
+}
+
+/* Основные стили для body */
+body {
+    font-size: 2.4rem; /* Базовый размер текста 2.4rem (24px) */
+    font-family: 'Quicksand'; /* Установка шрифта 'Quicksand' */
+    font-weight: 500; /* Начертание шрифта 500 (medium) */
+    color: #5a3e2b; /* Цвет текста */
+}
+
+/* Стили для основного контейнера .app */
+.app {
+    width: 100%; /* Ширина 100% */
+    height: 100vh; /* Высота 100vh (100% высоты окна просмотра) */
+    display: grid; /* Использование сетки для размещения элементов */
+    grid-template-rows: auto auto 1fr auto; /* Определение строк сетки */
+}
+
+/* Стили для заголовка h1 */
+h1 {
+    text-align: center; /* Выравнивание текста по центру */
+    background-color: #f4a226; /* Цвет фона */
+    font-family: 'Monoton'; /* Установка шрифта 'Monoton' */
+    font-size: 8rem; /* Размер текста 8rem (80px) */
+    text-transform: uppercase; /* Преобразование текста в верхний регистр */
+    font-weight: 400; /* Начертание шрифта 400 (normal) */
+    word-spacing: 30px; /* Междусловное расстояние 30px */
+    letter-spacing: -5px; /* Межбуквенное расстояние -5px */
+    padding: 2.4rem 0; /* Отступы внутри элемента */
+}
+
+/* Стили для формы .add-form */
+.add-form {
+    background-color: #e5771f; /* Цвет фона */
+    padding: 2.8rem 0; /* Отступы внутри элемента */
+    display: flex; /* Использование flexbox для размещения элементов */
+    align-items: center; /* Выравнивание по центру по вертикали */
+    justify-content: center; /* Выравнивание по центру по горизонтали */
+    gap: 0.8rem; /* Промежуток между элементами */
+}
+
+/* Стили для подзаголовка h3 */
+h3 {
+    margin-right: 1.6rem; /* Отступ справа */
+    font-size: 2.4rem; /* Размер текста 2.4rem (24px) */
+}
+/* Стили для кнопок, выпадающих списков и полей ввода */
+button,
+select,
+input {
+    background-color: #ffebb3; /* Цвет фона */
+    color: #5a3e2b; /* Цвет текста */
+    font-family: inherit; /* Наследование шрифта от родительского элемента */
+    border: none; /* Убираем границу */
+    border-radius: 10rem; /* Закругление углов */
+    padding: 1.2rem 3.2rem; /* Отступы внутри элемента */
+    font-weight: 700; /* Начертание шрифта 700 (bold) */
+    font-size: 1.8rem; /* Размер текста 1.8rem (18px) */
+    cursor: pointer; /* Задаем указатель при наведении */
+}
+
+/* Стили для кнопки внутри формы .add-form */
+.add-form button {
+    text-transform: uppercase; /* Преобразование текста в верхний регистр */
+    background-color: #76c7ad; /* Цвет фона */
+}
+
+/* Стили для контейнера .list */
+.list {
+    background-color: #5a3e2b; /* Цвет фона */
+    color: #ffebb3; /* Цвет текста */
+    padding: 4rem 0; /* Отступы внутри элемента */
+
+    display: flex; /* Использование flexbox для размещения элементов */
+    justify-content: space-between; /* Равномерное распределение по горизонтали */
+    flex-direction: column; /* Расположение элементов в столбце */
+    gap: 3.2rem; /* Промежуток между элементами */
+    align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+/* Стили для кнопок внутри .actions и выпадающего списка внутри .list */
+.actions button,
+.list select {
+    text-transform: uppercase; /* Преобразование текста в верхний регистр */
+    padding: 0.8rem 2.4rem; /* Отступы внутри элемента */
+    font-size: 1.4rem; /* Размер текста 1.4rem (14px) */
+    font-weight: 700; /* Начертание шрифта 700 (bold) */
+    margin: 0 0.8rem; /* Внешние отступы */
+}
+
+/* Стили для списка ul внутри .list */
+.list ul {
+    list-style: none; /* Убираем маркеры списка */
+    width: 80%; /* Ширина списка */
+    overflow: scroll; /* Включаем скроллинг при необходимости */
+
+    display: grid; /* Использование сетки для размещения элементов */
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(250px, 1fr)
+    ); /* Определение колонок сетки */
+    gap: 1.2rem; /* Промежуток между элементами */
+    justify-content: center; /* Равномерное распределение по горизонтали */
+    align-content: start; /* Расположение элементов сверху вниз */
+}
+
+/* Стили для элементов списка li внутри .list */
+.list li {
+    display: flex; /* Использование flexbox для размещения элементов */
+    align-items: center; /* Выравнивание по центру по вертикали */
+    gap: 1.2rem; /* Промежуток между элементами */
+}
+
+/* Стили для чекбокса */
+input[type='checkbox'] {
+    height: 2rem; /* Высота чекбокса */
+    width: 2rem; /* Ширина чекбокса */
+    accent-color: #e5771f; /* Цвет акцента для стилизации чекбокса */
+}
+
+/* Стили для кнопки внутри элемента списка li */
+.list li button {
+    cursor: pointer; /* Задаем указатель при наведении */
+    background: none; /* Убираем фон кнопки */
+    border: none; /* Убираем границу кнопки */
+    font-size: 1.8rem; /* Размер текста 1.8rem (18px) */
+    padding: 0.8rem; /* Отступы внутри элемента */
+    transform: translateY(2px); /* Смещение кнопки по вертикали */
+}
+
+/* Стили для контейнера .stats */
+.stats {
+    background-color: #76c7ad; /* Цвет фона */
+    text-align: center; /* Выравнивание текста по центру */
+    font-weight: 700; /* Начертание шрифта 700 (bold) */
+    padding: 3.2rem 0; /* Отступы внутри элемента */
+}
