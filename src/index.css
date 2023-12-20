@@ -4,6 +4,7 @@ const initialItems = [
   { id: 2, description: "Socks", quantity: 12, packed: false },
 ];
 */
+
 /* Импорт шрифтов Monoton и Quicksand из Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Quicksand:wght@500;700&display=swap');
 
@@ -111,7 +112,8 @@ input {
 .list ul {
     list-style: none; /* Убираем маркеры списка */
     width: 80%; /* Ширина списка */
-    overflow: scroll; /* Включаем скроллинг при необходимости */
+    /* overflow: scroll; Включаем скроллинг при необходимости */
+    overflow: hidden; /* Выключаем скроллинг  */
 
     display: grid; /* Использование сетки для размещения элементов */
     grid-template-columns: repeat(
