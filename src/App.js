@@ -12,10 +12,16 @@ const initialItems = [
 export default function App() {
     const [items, setItems] = useState(initialItems)
 
+    const addItem = (item) => {
+        console.log(item)
+        const newItems = [...items, item]
+        setItems(newItems)
+    }
+
     return (
         <div className="app">
             <Logo />
-            <Form />
+            <Form addItem={addItem} />
             <PackingList items={items} />
             <Stats />
         </div>

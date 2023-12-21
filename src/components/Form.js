@@ -1,16 +1,34 @@
-export default function Form() {
+import { useState } from 'react'
+
+export default function Form({ addItem }) {
+    const [description, setDescription] = useState('')
+    const [quantity, setQuantity] = useState(1)
+
     function handleSubmit(event) {
         event.preventDefault()
-        console.log(event)
+        if (!description) return
 
-        console.log(event.target)
-        // console.log(event.target.input.value)
+        const newItem = {
+            description,
+            quantity,
+            packed: false,
+            id: Date.now(),
+        }
+        // console.log(newItem)
+
+        addItem(newItem)
+
+        setDescription('')
+        setQuantity(1)
     }
 
     return (
         <form className="add-form" onSubmit={handleSubmit}>
             <h3>What do you need for your 😍 trip?</h3>
-            <select>
+            <select
+                value={quantity}
+                onChange={(event) => setQuantity(Number(event.target.value))}
+            >
                 {Array.from({ length: 20 }, (_, index) => index + 1).map(
                     (el) => (
                         <option key={el} value={el}>
@@ -19,7 +37,12 @@ export default function Form() {
                     )
                 )}
             </select>
-            <input type="text" placeholder="Item..." />
+            <input
+                type="text"
+                placeholder="Item..."
+                value={description}
+                onChange={(event) => setDescription(event.target.value)}
+            />
             <button>Add</button>
         </form>
     )
