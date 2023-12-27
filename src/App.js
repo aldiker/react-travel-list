@@ -42,7 +42,7 @@ export default function App() {
                 onDeleteItem={handleDeleteItem}
                 onToggleItemPacked={handleToggleItemPacked}
             />
-            <Stats />
+            <Stats items={items} />
         </div>
     )
 }
