@@ -25,11 +25,23 @@ export default function App() {
         setItems(newItems)
     }
 
+    const handleToggleItemPacked = (id) => {
+        console.log(id)
+        const newItems = items.map((item) =>
+            item.id === id ? { ...item, packed: !item.packed } : item
+        )
+        setItems(newItems)
+    }
+
     return (
         <div className="app">
             <Logo />
             <Form onAddItem={handleAddItem} />
-            <PackingList items={items} onDeleteItem={handleDeleteItem} />
+            <PackingList
+                items={items}
+                onDeleteItem={handleDeleteItem}
+                onToggleItemPacked={handleToggleItemPacked}
+            />
             <Stats />
         </div>
     )
